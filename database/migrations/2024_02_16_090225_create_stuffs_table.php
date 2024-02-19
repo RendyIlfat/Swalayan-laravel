@@ -15,6 +15,9 @@ return new class extends Migration
             $table->string('id')->primary();
             $table->string('name')->nullable();
             $table->double('price')->default(0);
+            $table->string('unit')->nullable();
+            $table->integer('status')->default(0);
+            $table->string('id_category')->nullable();
             $table->timestamps();
         });
     }

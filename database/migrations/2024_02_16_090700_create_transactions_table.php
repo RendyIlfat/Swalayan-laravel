@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->string('nota')->primary();
+            $table->timestamp('id_user');
+            $table->string('id_customer');
+            $table->integer('date')->nullable();
             $table->timestamps();
         });
     }
