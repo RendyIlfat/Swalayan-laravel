@@ -36,7 +36,7 @@ class UserController extends Controller
     {
         User::create($request->all());
 
-        return view('redirect');
+        return redirect ('/users');
     }
 
     /**

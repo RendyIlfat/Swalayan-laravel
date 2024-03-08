@@ -1,3 +1,3 @@
 setInterval(() => {
-    window.location.replace("/login");
+    window.location.replace("/users");
 }, 2000)

@@ -41,9 +41,9 @@
                                         <th>ID</th>
                                         <th>Nama</th>
                                         <th>Harga</th>
-                                        <th>Unit</th>
+                                        <th>Satuan</th>
+                                        <th>Kategori</th>
                                         <th>Status</th>
-                                        <th>Kode_Kategori</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -54,8 +54,8 @@
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->price }}</td>
                                             <td>{{ $item->unit }}</td>
+                                            <td>{{ @$item->category->name }}</td>
                                             <td>{{ $item->status == 1 ? 'Ada' : 'Tidak' }}</td>
-                                            <td>{{ $item->id_category }}</td>
                                             <td>
                                                 <a href="/stuffs/{{ @$item->id }}">
                                                     <button type="button" class="btn btn-warning btn-sm"><i 

@@ -9,7 +9,7 @@ class DetailTransaction extends Model
 {
     use HasFactory;
 
-    protected $table = 'detail_transaction';
+    protected $table = 'detail_transactions';
 
     protected $primarykey = 'id';
 

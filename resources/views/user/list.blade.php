@@ -50,8 +50,8 @@
                                         <tr>
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->name }}</td>
-                                            <td>{{ $item->Email }}</td>
-                                            <td>{{ $item->Password }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->password }}</td>
                                             <td>
                                                 <a href="/users/{{ @$item->id }}">
                                                     <button type="button" class="btn btn-warning btn-sm"><i 
