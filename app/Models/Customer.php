@@ -13,7 +13,7 @@ class Customer extends Model
 
     protected $primarykey = 'id';
 
-    protected $keyType = 'integer';
+    protected $keyType = 'string';
 
     protected $fillable = [
         'id',
