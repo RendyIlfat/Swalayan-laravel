@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/stuffs', [ApiController::class, 'stuff']); //Mengambil semua data
+Route::post('/stuffs', [ApiController::class, 'stuffAdd']); // Simpan data baru
+Route::put('/stuffs/{stuff}', [ApiController::class, 'stuffUpdate']); // Update data
+Route::delete('stuffs/{stuff}', [ApiController::class, 'stuffDelete']); // Delete data
+
