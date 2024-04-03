@@ -29,17 +29,36 @@
             <div class="row">
                 <div class="col-12">
 
+                    @if (session('mess'))
+                        <div class="card card-default">
+                            <div class="card-header">
+                                <h3 class="card-title">{{ session('mess') }}</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Data Category</h3>
                         </div>
-                            <!-- /.card-header -->
+                        <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>Nama</th>
+                                        <th>Alamat</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Status</th>
                                         <th></th>
                                     </tr>
@@ -49,15 +68,17 @@
                                         <tr>
                                             <td>{{ $item->id }}</td>
                                             <td>{{ $item->name }}</td>
-                                            <td>{{ $item->status == 1 ? 'Ada' : 'Tidak' }}</td>
+                                            <td>{{ $item->address }}</td>
+                                            <td>{{ $item->gender == 1 ? 'Laki-laki' : 'Perempuan' }}</td>
+                                            <td>{{ $item->status == 1 ? 'Aktif' : 'Tidak' }}</td>
                                             <td>
-
                                                 <a href="/categories/{{ @$item->id }}">
                                                 <button type="button" class="btn btn-warning btn-sm">
                                                     <i class="fas fa-edit"></i>
                                                 </button>
                                                 </a>
-                                                <form action="/categories/{{ $item->id }}" method="POST">
+                                                <form action="/categories/{{ $item->id }}" method="POST"
+                                                    style="display: inline-block">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm">

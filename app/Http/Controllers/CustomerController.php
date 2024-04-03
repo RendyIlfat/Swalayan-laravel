@@ -66,7 +66,9 @@ class CustomerController extends Controller
         $customer->fill($request->all());
         $customer->save();
 
-        return redirect('/customers');
+        return redirect('/customers')->with([
+            'mess' => 'Data berhasil disimpan',
+        ]);
     }
 
     /**
@@ -76,6 +78,8 @@ class CustomerController extends Controller
     {
         $customer->delete();
 
-        return redirect('/customers');
+        return redirect('/customers')->with([
+            'mess' => 'Data berhasil dihapus',
+        ]);
     }
 }

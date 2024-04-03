@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 // use Illuminate\Database\Eloquent\Relations\BelongsTo; // MANY TO ONE
-use Illuminate\Database\Eloquent\Relations\HasMany; // ONE TO MANY
-use Illuminate\Database\Eloquent\Relations\HasOne; // ONE TO ONE
+// use Illuminate\Database\Eloquent\Relations\HasMany; // ONE TO MANY
+// use Illuminate\Database\Eloquent\Relations\HasOne; // ONE TO ONE
 
 class Stuff extends Model
 {
@@ -25,6 +25,7 @@ class Stuff extends Model
         'price',
         'unit',
         'status',
+        'image',
         'id_category',
     ];
 
@@ -32,6 +33,6 @@ class Stuff extends Model
         return $this->HasOne(Category::class, 'id', 'id_category');
     }
     function detail() {
-        return $this->hasMany(Detailtransaction::class, 'id_stuff', 'id');
+        return $this->hasMany(DetailTransaction::class, 'id_stuff', 'id');
     }
 }

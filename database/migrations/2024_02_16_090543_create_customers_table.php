@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('id')->primary();
             $table->string('name')->nullable();
             $table->string('address')->nullable();
-            $table->timestamp('status')->default(0);
-            $table->string('gender')->default(1);
+            $table->integer('status')->default(0);
+            $table->integer('gender')->default(1);
             $table->timestamps();
         });
     }

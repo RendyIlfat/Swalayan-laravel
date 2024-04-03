@@ -15,9 +15,15 @@ class CustomerFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
+    {   
+        $fake = fake ('id_ID');
+
         return [
-            //
+            'id' => $fake->unique()->numerify('C#######'),
+            'name' => $fake->name(),
+            'address' => $fake->address(),
+            'gender' => $fake->randomElement([1, 2]),
+            'status' => $fake->randomElement([0, 1]),
         ];
     }
 }

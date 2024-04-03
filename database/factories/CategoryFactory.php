@@ -15,9 +15,13 @@ class CategoryFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-    {
+    {   
+        $fake = fake('id_ID');
+
         return [
-            //
+            'id' => $fake->unique()->numerify('K#####'),
+            'name' => $fake->word(),
+            'status' => $fake->randomElement([0 , 1]),
         ];
     }
 }
