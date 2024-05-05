@@ -39,9 +39,11 @@ class StuffController extends Controller
      */
     public function store(StoreStuffRequest $request)
     {   
+        // dd($request->file);
         $path = $request->file('file')->store('stuff');
-
+    
         $request->merge(['image' => $path]);
+        
         Stuff::create($request->all());
 
         return redirect('/stuffs')->with([
