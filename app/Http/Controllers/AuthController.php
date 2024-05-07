@@ -26,7 +26,6 @@ class AuthController extends Controller
             return redirect('/');
         } else {
             return back();
-            // return redirect('login);
         }
     }
 
@@ -41,9 +40,9 @@ class AuthController extends Controller
     {
         User::create([
             'name' => 'RendyIlfat',
-            'email' => 'rendyilfat@gmail.com',
+            'email' => 'rendyilfat@rendy.com',
             'email_verified_at' => now(),
-            'password' => '9999',
+            'password' => '123',
             'remember_token' => Str::random(10),
         ]);
     }

@@ -31,7 +31,7 @@ class ApiController extends Controller
             if (Hash::check($password, $user->password)) {
 
                 // Generate Token
-                $token = $user-> createToken('user_token')->plainTextToken;
+                $token = $user->createToken('user_token')->plainTextToken;
                 
                 // Kemabalikan data user (json)
                 return response()->json([
@@ -108,7 +108,7 @@ class ApiController extends Controller
 
     function stuffUpdate(Request $req, Stuff $stuff)
     {
-        $data->fill($req->all());
+        $stuff->fill($req->all());
         $data = $stuff->save();
 
         return response()->json([

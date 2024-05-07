@@ -16,7 +16,7 @@ use App\Http\Controllers\ApiController;
 |
 */
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::get('auth', [ApiController::class, 'auth']);
 
